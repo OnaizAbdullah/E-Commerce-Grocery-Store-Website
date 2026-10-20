@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1> Our Items Catalog</h1>
+
+<table>
+    <th scope="col">Items</th>
+    <th scope="col">Price</th>
+    <th scope="col">Category</th>
+    <td></td>
+    {% for item in items %}
+    <tr>
+        <td>{{item["name"]}}</td>
+        <td>€ {{item["price"]}}</td>
+        <td>{{item["type"]}}</td>
+        <td>
+            <a href="{{url_for('item',product_id=item['product_id'])}}">Purchase</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{%if g.admin %}
+<a href="{{url_for('add_item')}}" class="done">Add an Item</a>
+<a href="{{url_for('remove_item')}}" class="remove">Remove an Item</a>
+{%endif%}
+<p>
+    <a href="{{url_for('index')}}" class="navlink">Homepage</a>
+</p>
+{% endblock %}

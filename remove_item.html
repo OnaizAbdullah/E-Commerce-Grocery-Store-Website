@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h2>Remove an Item</h2>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    {{form.remove_item.label}}
+    {{form.remove_item()}}
+    <br/>
+    {% for error in form.remove_item.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+    <p><strong>Note: Make sure to <i>capitalise</i> the first letter of Item</strong></p>
+    <p>Ex: 'Milk' not 'milk'</p>
+    {{form.submit()}}
+</form>
+<p>
+    {{ message }}
+</p>
+<p>
+    <a href="{{url_for('items')}}" class="navlink"> Our items</a>
+</p>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Welcome to Cloud 66 Grocery Store!</h1>
+    {% if g.admin %}
+        <p class="greetings">Hello Admin</p>
+        <p></p>
+        <a href="{{url_for('view_feedback')}}" class="navlink">View user's feedback</a>
+    {% endif %}
+
+    {% if g.user or g.admin %}
+        {%if g.user%}
+        <p class="greetings">User id: {{g.user}}</p>
+        {%endif%}
+    {%else%}
+        <p><a href="{{url_for('login')}}" class="navlink">Login/Register</a></p>
+    {%endif%}
+
+
+    <p>
+        <a href="{{url_for('items')}}" class="navlink">Our Items</a>
+    </p>
+    <p>
+        <a href="{{url_for('cart')}}" class="navlink">Your cart</a>
+    </p>
+    <img src="{{url_for('static',filename='grocery-store-image.jpg')}}">
+
+{% endblock %}

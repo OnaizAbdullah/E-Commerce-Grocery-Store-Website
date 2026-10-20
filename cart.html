@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1> Your cart</h1>
+
+{% if cart %}
+    <table>
+        <thead>
+            <th scope="col"> Items</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Price</th>
+        </thead>
+        
+        <tbody id="body">
+        {% for item in cart %}
+            <tr>
+                <td> {{names[item]}}</td>
+                <td>{{cart[item]}}</td>
+                <td>€ {{prices[item]}}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <th scope="rowspan" colspan="2">Total:</th>
+                <td>€ {{total}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{url_for('clear_cart')}}" class="remove">Clear Cart</a>
+   
+   <a href="{{url_for('done')}}" class="done">Done Shopping</a>
+
+
+{% else %}
+    <p>Your cart is empty!</p>
+{% endif %}
+
+<p>
+    <a href="{{url_for('items')}}" class="navlink">Our Items</a>
+</p>
+
+
+
+
+{% endblock %}

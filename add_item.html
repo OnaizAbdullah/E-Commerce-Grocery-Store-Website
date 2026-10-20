@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h2>Add an Item</h2>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    {{form.item.label}}
+    {{form.item()}}
+    <br/>
+    {% for error in form.item.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+    
+    <p><strong>Note: Make sure to <i>capitalise</i> the first letter of Item</strong></p>
+    <p>Ex: 'Milk' not 'milk'</p>
+
+    {{form.price.label}}
+    {{form.price()}}
+    <br/>
+    {% for error in form.price.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+    {{form.category.label}}
+    {{form.category()}}
+    <br/>
+    {% for error in form.category.errors %}
+        {{ error }}
+    {% endfor %}
+    <br/>
+    {{form.submit()}}
+</form>
+<p>
+    {{ message }}
+</p>
+<p>
+    <a href="{{url_for('items')}}" class="navlink">Our items</a>
+</p>
+
+
+{% endblock %}

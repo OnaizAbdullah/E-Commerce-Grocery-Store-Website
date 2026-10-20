@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h1>Feedback Page</h1>
+
+<form id ="feedback" action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    {{form.feedback.label}}
+    {{form.feedback()}}
+    <br/>
+    {% for error in form.feedback.errors %}
+        {{ error }}
+    {% endfor %}
+    <p>Note: Any feedback given will be <b>anonymous</b></p>
+    {{form.submit()}}
+</form>
+<p>
+    {{ message}}
+</p>
+
+<p>
+    <a href="{{url_for('index')}}" class="navlink">Return to Homepage</a>
+</p>
+
+{% endblock %}

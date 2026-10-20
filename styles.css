@@ -1,0 +1,126 @@
+:root{
+      background-color: rgba(153, 226, 255, 0.653);
+      font-size: 20px;
+}
+
+h1{
+    display: flex;
+    justify-content: space-evenly;
+    color: #f5f5f5;
+    border: outset 0.2em cyan;
+    background-color: black;
+}
+h2{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border: outset 0.2em black;
+    background-color: white;
+}
+h3{
+    border: outset 0.2em black;
+    width: 10%;
+    text-align: center;
+    background-color: white;
+}
+
+table{
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+.navlink{
+    display: flex;
+    justify-content: space-evenly;
+    border: 0.2em ridge cyan;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+a:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+
+
+#feedback [type="text"]{
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+#feedback > p{
+    font-size: 80%;
+}
+
+.remove, .done{
+    display: inline-block;
+    border-style: inset outset;
+    border-color: black;
+    background-color: red;
+    border-radius: 0.4em;
+    color: white;
+    padding: 0.2em;
+    width: 15%;
+    text-align: center;
+    text-size-adjust: 80%;
+    margin: 1em 0.5em;
+    text-decoration: none;
+}
+.done{
+    background-color: green;
+}
+
+.remove:hover{
+    background-color: #ff9d9c;
+}
+.done:hover{
+    background-color: lightgreen;
+}
+
+[type="submit"]{
+    border: 0.1em groove white;
+    color: white;
+    background-color: green;
+    font-size: 90%;
+    padding: 1em;
+}
+
+.greetings{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 0.3em dotted whitesmoke;
+    border-radius: 70%;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    padding: 1em;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 0 auto;
+    border: 0.2em outset darkcyan;
+    box-shadow: 0.1em 0.1em black;
+    background-color: cadetblue;
+    padding: 1em;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h3> {{item["name"]}}</h3>
+
+<p>Price: € {{item["price"]}}</p>
+<p> Category: {{item["type"]}}</p>
+<p>In Stock?: Yes</p>
+
+
+
+<p>
+    <a href="{{url_for('add_to_cart',product_id=item['product_id'])}}" class="navlink">Add to Cart</a>
+</p>
+
+
+{% endblock %}

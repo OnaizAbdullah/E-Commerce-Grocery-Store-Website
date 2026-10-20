@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+{% if done%}
+
+    <h2>Items Bought</h2>
+    <table>
+        <thead>
+            <th scope="col"> Items</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Price</th>
+        </thead>
+        
+        <tbody id="body">
+        {% for item in cart %}
+            <tr>
+                <td> {{names[item]}}</td>
+                <td>{{cart[item]}}</td>
+                <td>{{prices[item]}}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <th scope="rowspan" colspan="2">Total:</th>
+                <td>{{total}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>
+        Thank you for choosing to shop with Cloud 66, make sure to give us some feedback!
+    </h2>
+
+    <p>
+       <a href="{{url_for('feedback')}}" class="navlink"> Click here to give feedback</a>
+    </p>
+{%else%}
+<p>User has not finishing shopping yet</p>
+{%endif%}
+
+{% endblock %}
